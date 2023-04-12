@@ -21,6 +21,7 @@ func main() {
 }
 
 func HelloServer(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("I am testing out something")
 	fmt.Fprintf(w, "Hello, from %s!", r.Host)
 }
 
