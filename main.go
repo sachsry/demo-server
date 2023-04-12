@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"sachsry/demo-server/response"
 
 	"github.com/kelseyhightower/envconfig"
 )
@@ -21,7 +22,11 @@ func main() {
 }
 
 func HelloServer(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello, from %s!", r.Host)
+	// response.Success(w)
+	resp := map[string]string{
+		"message": "Lisa says hello",
+	}
+	response.SuccessWithBody(w, resp)
 }
 
 func DemoConfig(w http.ResponseWriter, r *http.Request) {
