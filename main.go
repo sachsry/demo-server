@@ -22,7 +22,7 @@ func main() {
 }
 
 func HelloServer(w http.ResponseWriter, r *http.Request) {
-	// response.Success(w)
+	fmt.Println("I am testing out something")
 	resp := map[string]string{
 		"message": "Lisa says hello",
 	}
